@@ -17,7 +17,7 @@ class Solution(object):
 def execute():
     nums = [3, 2, 4]
     target = 6
-    sol=Solution()
+    sol = Solution()
     print(sol.twoSum(nums=nums, target=target))
 
 
