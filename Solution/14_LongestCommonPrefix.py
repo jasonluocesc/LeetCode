@@ -5,18 +5,35 @@ class Solution:
         :rtype: str
         """
         if not strs:
-            return " "
+            return ""
 
+        strs.sort(key=len)
 
-        for i, letter_group in enumerate(zip(*strs)):
+        if len(strs[0]) == 0:
+            return ""
+        if len(strs) == 1:
+            return strs[0]
 
-            print(set(letter_group))
-            if len(set(letter_group))>1:
-                print("o")
-                return strs[0][:i]
+        first = strs[0]
+        last = strs[-1]
+        length = len(first)
+        i=0
+        while i<length:
+            if first[i]==last[i]:
+                for str in strs:
+                    if str[i] == first[i]:
+                        pass
+                    else:
+                        return first[0:i]
+                i+=1
             else:
-                print("s")
-                return min(strs)
+                return first[0:i]
+        return first[0:i]
 
-strs_1 = ['avce','avco','avcd']
+
+
+
+strs_1 = ["abab","aba","abc"]
+#strs_1.sort(key=len)
+#print(strs_1)
 print(Solution().longestCommonPrefix(strs_1))
