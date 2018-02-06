@@ -4,17 +4,21 @@
 #         self.val = x
 #         self.next = None
 
+class ListNode:
+    def __int__(self, x):
+        self.val = x
+        self.next = None
 
-class Solution(object):
+class Solution:
     def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
         :rtype: ListNode
         """
-        root = ListNode(0)
-        result = root
+        root = n= ListNode(0)
         carry = 0
+
         while l1 or l2 or carry ==1:
             value = 0
             if l1:
@@ -24,11 +28,13 @@ class Solution(object):
                 value += l2.val
                 l2 = l2.next
             value += carry
-            root.next
+            value = value%10
+            carry=value/10
+            n.next=ListNode(value)
+            n=n.next
+        return root.next
 
-class ListNode(object):
-    def __int__(self, x):
-        self.val = x
-        self.next = None
 
 
+
+print(Solution().addTwoNumbers([2,4,3],[5,6,4]))
