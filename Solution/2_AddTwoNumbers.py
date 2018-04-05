@@ -36,5 +36,3 @@ class Solution:
 
 
 
-
-print(Solution().addTwoNumbers([2,4,3],[5,6,4]))
